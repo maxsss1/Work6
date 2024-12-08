@@ -2,28 +2,28 @@
 
 namespace App;
 
-class person
+class Person
 {
-    private $name;
-    private $age;
+    private string $name;
+    private int $age;
 
-    public function __construct($name, $age)
+    public function __construct(string $name, int $age)
     {
         $this->name = $name;
         $this->setAge($age);
     }
 
-    public function getName()
+    public function getName(): string
     {
         return $this->name;
     }
 
-    public function getAge()
+    public function getAge(): int
     {
         return $this->age;
     }
 
-    public function setAge($age)
+    public function setAge(int $age): void
     {
         if ($age < 0 || $age > 150) {
             throw new \OutOfRangeException("Возраст должен быть в пределах от 0 до 150 лет.");
